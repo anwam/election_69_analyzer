@@ -1,395 +1,667 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>วิเคราะห์ความผิดปกติการเลือกตั้ง 69</title>
-    <!-- Google Fonts: Prompt -->
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        :root {
-            --primary-color: #14213d;
-            --accent-color: #fca311; --accent-rgb: 252, 163, 17;
-            --base-color: #e5e5e5;
-            --white: #ffffff;
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>วิเคราะห์ความผิดปกติการเลือกตั้ง 69</title>
+        <!-- Google Fonts: Prompt -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Bootstrap 5 CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <!-- Bootstrap JS Bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <style>
+            :root {
+                --primary-color: #14213d;
+                --accent-color: #fca311;
+                --accent-rgb: 252, 163, 17;
+                --base-color: #e5e5e5;
+                --white: #ffffff;
+            }
 
-        body { 
-            font-family: 'Prompt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            background-color: var(--base-color);
-            color: var(--primary-color);
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            color: var(--primary-color);
-            font-weight: 700;
-        }
+            body {
+                font-family:
+                    "Prompt",
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    Roboto,
+                    sans-serif;
+                background-color: var(--base-color);
+                color: var(--primary-color);
+            }
 
-        .text-primary-theme { color: var(--primary-color); }
-        .text-accent { color: var(--accent-color); }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: var(--primary-color);
+                font-weight: 700;
+            }
 
-        .card {
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(20, 33, 61, 0.08);
-            background-color: var(--white);
-            overflow: hidden;
-            margin-bottom: 0; /* Reset */
-        }
-        
-        .card-header {
-            background-color: var(--primary-color);
-            color: var(--white);
-            border-bottom: 4px solid var(--accent-color);
-            padding: 1rem 1.5rem;
-        }
-        
-        .card-header h4, .card-header h5 {
-            color: var(--white);
-            margin: 0;
-            font-weight: 600;
-        }
-        .card-header .text-muted { color: rgba(255,255,255,0.7) !important; }
+            .text-primary-theme {
+                color: var(--primary-color);
+            }
+            .text-accent {
+                color: var(--accent-color);
+            }
 
-        .stat-card { transition: transform 0.2s; border-top: 5px solid var(--primary-color); }
-        .stat-card:hover { transform: translateY(-5px); border-top-color: var(--accent-color); }
-        
-        .stat-value {
-            color: var(--accent-color);
-            font-weight: 700;
-            text-shadow: 2px 2px 0px rgba(20, 33, 61, 0.1);
-        }
+            .card {
+                border: none;
+                border-radius: 12px;
+                box-shadow: 0 8px 16px rgba(20, 33, 61, 0.08);
+                background-color: var(--white);
+                overflow: hidden;
+                margin-bottom: 0; /* Reset */
+            }
 
-        .highlight-anomaly { 
-            background-color: rgba(var(--accent-rgb), 0.15); 
-            border-left: 5px solid var(--accent-color); 
-        }
+            .card-header {
+                background-color: var(--primary-color);
+                color: var(--white);
+                border-bottom: 4px solid var(--accent-color);
+                padding: 1rem 1.5rem;
+            }
 
-        .table thead th {
-            background-color: #f0f0f0;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            border-bottom: 2px solid var(--primary-color);
-        }
+            .card-header h4,
+            .card-header h5 {
+                color: var(--white);
+                margin: 0;
+                font-weight: 600;
+            }
+            .card-header .text-muted {
+                color: rgba(255, 255, 255, 0.7) !important;
+            }
 
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            font-weight: 600;
-        }
-        .btn-primary:hover {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
-            color: var(--primary-color);
-        }
+            .stat-card {
+                transition: transform 0.2s;
+                border-top: 5px solid var(--primary-color);
+            }
+            .stat-card:hover {
+                transform: translateY(-5px);
+                border-top-color: var(--accent-color);
+            }
 
-        canvas { max-height: 400px; }
-        .party-logo-sm { height: 24px; vertical-align: middle; border-radius: 50%; border: 1px solid #eee; background: white; }
-        .party-logo-md { height: 36px; vertical-align: middle; border-radius: 50%; border: 1px solid #eee; background: white; }
-        
-        /* Expandable Table */
-        .cursor-pointer { cursor: pointer; }
-        .detail-row { background-color: #fcfcfc; }
-        .detail-table { font-size: 0.9em; margin-bottom: 0; }
-        .detail-table thead th { background-color: transparent; color: #666; font-weight: 500; border-bottom: 1px solid #eee; }
-        .accordion-button::after { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2314213d'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); }
-        .rotate-icon { transition: transform 0.2s; }
-        .collapsed .rotate-icon { transform: rotate(-90deg); }
-    </style>
-</head>
-<body>
-    <div class="container py-5">
-        <header class="mb-5 text-center">
-            <h1 class="display-4 fw-bold mb-3">🚨 ตรวจจับความผิดปกติการเลือกตั้ง 69</h1>
-            <p class="lead text-secondary fw-normal">วิเคราะห์ความสัมพันธ์ของคะแนน "บัตร 2 ใบ" ที่น่าสงสัย จากรูปแบบ Twin Number</p>
-        </header>
-        
-        <!-- Summary Stats -->
-        <div class="row g-4 mb-5">
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 stat-card">
-                    <div class="card-body text-center py-4">
-                        <h2 class="display-3 stat-value mb-2" id="total-anomalies">-</h2>
-                        <h5 class="text-secondary mb-0">เขตที่พบคะแนนผิดปกติ</h5>
+            .stat-value {
+                color: var(--accent-color);
+                font-weight: 700;
+                text-shadow: 2px 2px 0px rgba(20, 33, 61, 0.1);
+            }
+
+            .highlight-anomaly {
+                background-color: rgba(var(--accent-rgb), 0.15);
+                border-left: 5px solid var(--accent-color);
+            }
+
+            .table thead th {
+                background-color: #f0f0f0;
+                color: var(--primary-color);
+                text-transform: uppercase;
+                font-size: 0.9rem;
+                border-bottom: 2px solid var(--primary-color);
+            }
+
+            .btn-primary {
+                background-color: var(--primary-color);
+                border-color: var(--primary-color);
+                font-weight: 600;
+            }
+            .btn-primary:hover {
+                background-color: var(--accent-color);
+                border-color: var(--accent-color);
+                color: var(--primary-color);
+            }
+
+            canvas {
+                max-height: 400px;
+            }
+            .party-logo-sm {
+                height: 24px;
+                vertical-align: middle;
+                border-radius: 50%;
+                border: 1px solid #eee;
+                background: white;
+            }
+            .party-logo-md {
+                height: 36px;
+                vertical-align: middle;
+                border-radius: 50%;
+                border: 1px solid #eee;
+                background: white;
+            }
+            .party-logo-lg {
+                height: 48px;
+                vertical-align: middle;
+                border-radius: 50%;
+                border: 2px solid #eee;
+                background: white;
+            }
+
+            /* Chart Icons Container */
+            .chart-icons-container {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin-bottom: 15px;
+                flex-wrap: wrap;
+            }
+            .chart-icon-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+            }
+            .chart-icon-wrapper img {
+                height: 40px;
+                border-radius: 50%;
+                border: 2px solid #eee;
+                background: white;
+            }
+            .chart-icon-wrapper span {
+                font-size: 0.75rem;
+                color: #666;
+                text-align: center;
+            }
+            .chart-icon-pair {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            .chart-icon-pair img {
+                height: 32px;
+                border-radius: 50%;
+                border: 2px solid #eee;
+                background: white;
+            }
+
+            /* Expandable Table */
+            .cursor-pointer {
+                cursor: pointer;
+            }
+            .detail-row {
+                background-color: #fcfcfc;
+            }
+            .detail-table {
+                font-size: 0.9em;
+                margin-bottom: 0;
+            }
+            .detail-table thead th {
+                background-color: transparent;
+                color: #666;
+                font-weight: 500;
+                border-bottom: 1px solid #eee;
+            }
+            .accordion-button::after {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2314213d'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+            }
+            .rotate-icon {
+                transition: transform 0.2s;
+            }
+            .collapsed .rotate-icon {
+                transform: rotate(-90deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container py-5">
+            <header class="mb-5 text-center">
+                <h1 class="display-4 fw-bold mb-3">
+                    🚨 ตรวจจับความผิดปกติการเลือกตั้ง 69
+                </h1>
+                <p class="lead text-secondary fw-normal">
+                    วิเคราะห์ความสัมพันธ์ของคะแนน "บัตร 2 ใบ" ที่น่าสงสัย
+                    จากรูปแบบ Twin Number
+                </p>
+            </header>
+
+            <!-- Summary Stats -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 stat-card">
+                        <div class="card-body text-center py-4">
+                            <h2
+                                class="display-3 stat-value mb-2"
+                                id="total-anomalies"
+                            >
+                                -
+                            </h2>
+                            <h5 class="text-secondary mb-0">
+                                เขตที่พบคะแนนผิดปกติ
+                            </h5>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 stat-card">
-                    <div class="card-body text-center py-4">
-                        <div id="top-party" class="display-6 fw-bold text-dark mb-2">-</div>
-                        <h5 class="text-secondary mb-0">พรรคที่ได้ประโยชน์สูงสุด</h5>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 stat-card">
+                        <div class="card-body text-center py-4">
+                            <div
+                                id="top-party"
+                                class="display-6 fw-bold text-dark mb-2"
+                            >
+                                -
+                            </div>
+                            <h5 class="text-secondary mb-0">
+                                พรรคที่ได้ประโยชน์สูงสุด
+                            </h5>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm border-0 stat-card">
-                    <div class="card-body text-center py-4">
-                        <h2 class="display-3 stat-value mb-2" id="max-votes">-</h2>
-                        <h5 class="text-secondary mb-0">คะแนนหลงผิดสูงสุด (ต่อเขต)</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Hypothesis Section -->
-        <div class="card shadow-sm mb-5">
-            <div class="card-header">
-                <h4 class="mb-0">🔎 ปรากฏการณ์ "กาเบอร์เดิม" (กาบัตร 2 ใบเบอร์เดียวกัน)</h4>
-            </div>
-            <div class="card-body p-4">
-                <p class="card-text fs-5">เกิดอะไรขึ้นเมื่อคนเลือก <strong>ส.ส. เขต เบอร์ X</strong> แล้วเผลอไปกาบัตรบัญชีรายชื่อ <strong>เบอร์ X</strong> ด้วย?</p>
-                <div class="alert highlight-anomaly border-0 text-dark">
-                    <div class="d-flex">
-                        <div class="fs-2 me-3">💡</div>
-                        <div>
-                             <em><strong>สิ่งที่ตรวจพบ:</strong> พรรคบัญชีรายชื่อที่คนอาจไม่รู้จัก แต่โชคดีได้ "เบอร์เดียวกับ ส.ส. ที่ชนะในเขตนั้น" กลับมีคะแนนสูงขึ้นมาอย่างผิดสังเกต เมื่อเทียบกับค่าเฉลี่ยปกติของพรรคนั้นๆ</em>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 stat-card">
+                        <div class="card-body text-center py-4">
+                            <h2
+                                class="display-3 stat-value mb-2"
+                                id="max-votes"
+                            >
+                                -
+                            </h2>
+                            <h5 class="text-secondary mb-0">
+                                คะแนนหลงผิดสูงสุด (ต่อเขต)
+                            </h5>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Graphs Section -->
-        <div class="row mb-5">
-            <!-- Graph 1 -->
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-header">
-                        <h5 class="mb-0">📊 10 อันดับเขตที่น่าสงสัย</h5>
-                    </div>
-                    <div class="card-body">
-                        <p class="text-secondary small mb-4">
-                            10 เขตเลือกตั้งที่มีจำนวนบัตรบัญชีรายชื่อ "หลงผิด" สูงที่สุด
-                            <br>(สีของแท่งกราฟแบ่งตาม <strong>หมายเลขเบอร์ผู้สมัคร</strong>)
-                        </p>
-                        <canvas id="topAreaChart"></canvas>
-                    </div>
+            <!-- Hypothesis Section -->
+            <div class="card shadow-sm mb-5">
+                <div class="card-header">
+                    <h4 class="mb-0">
+                        🔎 ปรากฏการณ์ "กาเบอร์เดิม" (กาบัตร 2 ใบเบอร์เดียวกัน)
+                    </h4>
                 </div>
-            </div>
-            <!-- Graph 2 -->
-            <div class="col-lg-6">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-header">
-                        <h5 class="mb-0">🎯 ความผิดปกติตามหมายเลขเบอร์</h5>
-                    </div>
-                    <div class="card-body">
-                        <p class="text-secondary small mb-4">
-                            สัดส่วนว่า <strong>"เบอร์"</strong> หมายเลขใด (1-9) 
-                            ที่เป็นคู่แฝดแล้วเกิดปรากฏการณ์คะแนนพุ่งบ่อยที่สุด
-                        </p>
-                        <canvas id="numberDistChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- New Aggregation Section -->
-        <div class="row mb-5">
-            <!-- Top Provinces -->
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-header">
-                        <h5 class="mb-0">📍 10 จังหวัดที่มีความผิดปกติสูงสุด</h5>
-                    </div>
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0" id="provinceTable">
-                                <thead>
-                                    <tr>
-                                        <th class="ps-4">จังหวัด</th>
-                                        <th class="text-end">จำนวนเขต</th>
-                                        <th class="text-end pe-4">คะแนนแฝดรวม</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
+                <div class="card-body p-4">
+                    <p class="card-text fs-5">
+                        เกิดอะไรขึ้นเมื่อคนเลือก
+                        <strong>ส.ส. เขต เบอร์ X</strong>
+                        แล้วเผลอไปกาบัตรบัญชีรายชื่อ
+                        <strong>เบอร์ X</strong> ด้วย?
+                    </p>
+                    <div class="alert highlight-anomaly border-0 text-dark">
+                        <div class="d-flex">
+                            <div class="fs-2 me-3">💡</div>
+                            <div>
+                                <em
+                                    ><strong>สิ่งที่ตรวจพบ:</strong>
+                                    พรรคบัญชีรายชื่อที่คนอาจไม่รู้จัก
+                                    แต่โชคดีได้ "เบอร์เดียวกับ ส.ส.
+                                    ที่ชนะในเขตนั้น"
+                                    กลับมีคะแนนสูงขึ้นมาอย่างผิดสังเกต
+                                    เมื่อเทียบกับค่าเฉลี่ยปกติของพรรคนั้นๆ</em
+                                >
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Top MP Parties -->
-             <div class="col-lg-6">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-header">
-                        <h5 class="mb-0">🗳️ พรรค ส.ส. เขตที่มักเจอ "กาเบอร์เดิม"</h5>
+
+            <!-- Graphs Section -->
+            <div class="row mb-5">
+                <!-- Graph 1 -->
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-header">
+                            <h5 class="mb-0">📊 10 อันดับเขตที่น่าสงสัย</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-secondary small mb-2">
+                                10 เขตเลือกตั้งที่มีจำนวนบัตรบัญชีรายชื่อ
+                                "หลงผิด" สูงที่สุด
+                                <br />(สีของแท่งกราฟแบ่งตาม
+                                <strong>หมายเลขเบอร์ผู้สมัคร</strong>)
+                            </p>
+
+                            <!-- Toggle Controls -->
+                            <div class="d-flex gap-2 mb-2 flex-wrap">
+                                <button
+                                    class="btn btn-sm btn-outline-primary"
+                                    onclick="toggleOverlay()"
+                                    id="overlayToggleBtn"
+                                >
+                                    ✨ ระบายสีคู่พรรค: เปิด
+                                </button>
+                                <button
+                                    class="btn btn-sm btn-outline-secondary"
+                                    onclick="toggleBaseColor()"
+                                    id="baseColorToggleBtn"
+                                >
+                                    🎨 สีหลัก: พรรคบัญชีรายชื่อ (PL)
+                                </button>
+                            </div>
+
+                            <div
+                                class="alert alert-info d-flex align-items-center mb-2"
+                                style="font-size: 0.8rem"
+                            >
+                                <div class="me-2">🎨</div>
+                                <div class="small" id="barColorLegend">
+                                    <strong>สีกราฟ:</strong> สีพื้นหลัก =
+                                    พรรคบัญชีรายชื่อ (PL) | จุดประกอบ = พรรค
+                                    ส.ส. เขต (MP)
+                                </div>
+                            </div>
+                            <div
+                                id="topAreaIcons"
+                                class="chart-icons-container"
+                            ></div>
+                            <canvas id="topAreaChart"></canvas>
+                        </div>
                     </div>
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle mb-0" id="mpPartyTable">
-                                <thead>
-                                    <tr>
-                                        <th class="ps-4">พรรค ส.ส. เขต</th>
-                                        <th class="text-end">จำนวนเขต</th>
-                                        <th class="text-end pe-4">คะแนนแฝดรวม</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
+                </div>
+                <!-- Graph 2 -->
+                <div class="col-lg-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-header">
+                            <h5 class="mb-0">🎯 ความผิดปกติตามหมายเลขเบอร์</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-secondary small mb-2">
+                                สัดส่วนว่า <strong>"เบอร์"</strong> หมายเลขใด
+                                (1-9)
+                                ที่เป็นคู่แฝดแล้วเกิดปรากฏการณ์คะแนนพุ่งบ่อยที่สุด
+                            </p>
+
+                            <!-- Toggle Controls -->
+                            <div class="d-flex gap-2 mb-2 flex-wrap">
+                                <button
+                                    class="btn btn-sm btn-outline-primary"
+                                    onclick="toggleOverlay()"
+                                    id="overlayToggleBtn2"
+                                >
+                                    ✨ ระบายสีคู่พรรค: เปิด
+                                </button>
+                                <button
+                                    class="btn btn-sm btn-outline-secondary"
+                                    onclick="toggleBaseColor()"
+                                    id="baseColorToggleBtn2"
+                                >
+                                    🎨 สีหลัก: พรรคบัญชีรายชื่อ (PL)
+                                </button>
+                            </div>
+
+                            <div
+                                class="alert alert-info d-flex align-items-center mb-2"
+                                style="font-size: 0.8rem"
+                            >
+                                <div class="me-2">🎨</div>
+                                <div class="small" id="doughnutColorLegend">
+                                    <strong>สีกราฟ:</strong> สีพื้นหลัก =
+                                    พรรคบัญชีรายชื่อ (PL) | จุดประกอบ = พรรค
+                                    ส.ส. เขต (MP)
+                                </div>
+                            </div>
+                            <div
+                                id="numberDistIcons"
+                                class="chart-icons-container"
+                            ></div>
+                            <canvas id="numberDistChart"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Party Summary Table -->
-        <div class="card shadow-sm mb-5">
-            <div class="card-header">
-                <h4 class="mb-0">🏆 สรุปพรรคบัญชีรายชื่อที่ได้อานิสงส์สูงสุด (Top Beneficiaries)</h4>
+            <!-- New Aggregation Section -->
+            <div class="row mb-5">
+                <!-- Top Provinces -->
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                📍 10 จังหวัดที่มีความผิดปกติสูงสุด
+                            </h5>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table
+                                    class="table table-hover align-middle mb-0"
+                                    id="provinceTable"
+                                >
+                                    <thead>
+                                        <tr>
+                                            <th class="ps-4">จังหวัด</th>
+                                            <th class="text-end">จำนวนเขต</th>
+                                            <th class="text-end pe-4">
+                                                คะแนนแฝดรวม
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top MP Parties -->
+                <div class="col-lg-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                🗳️ พรรค ส.ส. เขตที่มักเจอ "กาเบอร์เดิม"
+                            </h5>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table
+                                    class="table table-hover align-middle mb-0"
+                                    id="mpPartyTable"
+                                >
+                                    <thead>
+                                        <tr>
+                                            <th class="ps-4">พรรค ส.ส. เขต</th>
+                                            <th class="text-end">จำนวนเขต</th>
+                                            <th class="text-end pe-4">
+                                                คะแนนแฝดรวม
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                <p class="text-secondary mb-3">รวมสถิติพรรคบัญชีรายชื่อที่ได้รับคะแนนที่น่าสงสัย (คะแนนผี) รวมสูงสุด 5 อันดับแรกจากทั่วประเทศ</p>
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle mb-0" id="partySummaryTable">
-                        <thead>
-                            <tr>
-                                <th class="text-center" style="width: 60px;">#</th>
-                                <th>พรรคบัญชีรายชื่อ</th>
-                                <th class="text-end">จำนวนเขตที่พบ</th>
-                                <th class="text-end" style="width: 20%">คะแนนที่สงสัยรวม</th>
-                                <th class="text-end">เฉลี่ยต่อเขต</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+
+            <!-- Party Summary Table -->
+            <div class="card shadow-sm mb-5">
+                <div class="card-header">
+                    <h4 class="mb-0">
+                        🏆 สรุปพรรคบัญชีรายชื่อที่ได้อานิสงส์สูงสุด (Top
+                        Beneficiaries)
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <p class="text-secondary mb-3">
+                        รวมสถิติพรรคบัญชีรายชื่อที่ได้รับคะแนนที่น่าสงสัย
+                        (คะแนนผี) รวมสูงสุด 5 อันดับแรกจากทั่วประเทศ
+                    </p>
+                    <div class="table-responsive">
+                        <table
+                            class="table table-hover align-middle mb-0"
+                            id="partySummaryTable"
+                        >
+                            <thead>
+                                <tr>
+                                    <th class="text-center" style="width: 60px">
+                                        #
+                                    </th>
+                                    <th>พรรคบัญชีรายชื่อ</th>
+                                    <th class="text-end">จำนวนเขตที่พบ</th>
+                                    <th class="text-end" style="width: 20%">
+                                        คะแนนที่สงสัยรวม
+                                    </th>
+                                    <th class="text-end">เฉลี่ยต่อเขต</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detail Table -->
+            <div class="card shadow-sm mb-5">
+                <div
+                    class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2"
+                >
+                    <h4 class="mb-0">📋 20 อันดับความผิดปกติโดยละเอียด</h4>
+                    <span class="badge bg-white text-dark border"
+                        >เรียงตามคะแนนที่น่าสงสัยมากไปน้อย</span
+                    >
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table
+                            class="table table-hover align-middle mb-0"
+                            id="anomalyTable"
+                        >
+                            <thead>
+                                <tr>
+                                    <th class="ps-4">จังหวัด / เขต</th>
+                                    <th>ส.ส. เขตที่ชนะ</th>
+                                    <th>พรรคบัญชีรายชื่อ (เบอร์เดียวกัน)</th>
+                                    <th>อันดับ</th>
+                                    <th>คะแนนพรรคแฝด</th>
+                                    <th>คะแนน ส.ส. พรรคแฝด</th>
+                                    <th>% เทียบกับ ส.ส.</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer bg-white text-center py-3">
+                    <button
+                        id="loadMoreBtn"
+                        class="btn btn-primary px-4"
+                        style="display: none"
+                        onclick="renderTableBatch()"
+                    >
+                        โหลดข้อมูลเพิ่มเติม
+                    </button>
                 </div>
             </div>
         </div>
 
-        <!-- Detail Table -->
-        <div class="card shadow-sm mb-5">
-            <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
-                <h4 class="mb-0">📋 20 อันดับความผิดปกติโดยละเอียด</h4>
-                <span class="badge bg-white text-dark border">เรียงตามคะแนนที่น่าสงสัยมากไปน้อย</span>
-            </div>
-            <div class="card-body p-0">
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle mb-0" id="anomalyTable">
-                        <thead>
-                            <tr>
-                                <th class="ps-4">จังหวัด / เขต</th>
-                                <th>ส.ส. เขตที่ชนะ</th>
-                                <th>พรรคบัญชีรายชื่อ (เบอร์เดียวกัน)</th>
-                                <th>อันดับ</th>
-                                <th>คะแนนพรรคแฝด</th>
-                                <th>คะแนน ส.ส. พรรคแฝด</th>
-                                <th>% เทียบกับ ส.ส.</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="card-footer bg-white text-center py-3">
-                <button id="loadMoreBtn" class="btn btn-primary px-4" style="display: none;" onclick="renderTableBatch()">
-                    โหลดข้อมูลเพิ่มเติม
-                </button>
-            </div>
-        </div>
-    </div>
+        <script>
+            let allAnomalies = [];
+            let displayedCount = 0;
+            const ITEMS_PER_PAGE = 20;
 
-<script>
-    let allAnomalies = [];
-    let displayedCount = 0;
-    const ITEMS_PER_PAGE = 20;
-    
-    // Data mappings
-    const partyMap = {};
-    const provinceMap = {};
+            // Toggle state variables
+            let showOverlay = true; // Show party pair overlay (dots)
+            let baseColorIsPL = true; // true = PL is base, false = MP is base
 
-    // Defined Color Palette for Numbers 1-10
-    const numberColors = {
-        1: '#ef476f', // Pink/Red
-        2: '#fca311', // Orange/Gold (Theme Accent)
-        3: '#06d6a0', // Green
-        4: '#118ab2', // Blue
-        5: '#073b4c', // Dark Blue
-        6: '#9d4edd', // Purple
-        7: '#ffbe0b', // Yellow
-        8: '#fb5607', // Orange Red
-        9: '#3a86ff', // Soft Blue
-        0: '#8338ec'  // Violet
-    };
+            // Chart instances (stored to destroy before re-rendering)
+            let topAreaChartInstance = null;
+            let numberDistChartInstance = null;
 
-    async function loadData() {
-        try {
-            const [reportRes, commonRes, partyRes] = await Promise.all([
-                fetch('data/anomaly_report.json'),
-                fetch('data/common-data.json'),
-                fetch('data/party-data.json')
-            ]);
+            // Data mappings
+            const partyMap = {};
+            const provinceMap = {};
 
-            const reportData = await reportRes.json();
-            const commonData = await commonRes.json();
-            const partyData = await partyRes.json();
-            
-            // Process metadata
-            processCommonData(commonData);
-            processPartyData(partyData);
+            // Defined Color Palette for Numbers 1-10
+            const numberColors = {
+                1: "#ef476f", // Pink/Red
+                2: "#fca311", // Orange/Gold (Theme Accent)
+                3: "#06d6a0", // Green
+                4: "#118ab2", // Blue
+                5: "#073b4c", // Dark Blue
+                6: "#9d4edd", // Purple
+                7: "#ffbe0b", // Yellow
+                8: "#fb5607", // Orange Red
+                9: "#3a86ff", // Soft Blue
+                0: "#8338ec", // Violet
+            };
 
-            allAnomalies = reportData.anomalies;
-            renderDashboard(reportData);
-            renderAggregations(reportData);
-            renderPartySummary(allAnomalies);
-            renderTableBatch();
-        } catch (error) {
-            console.error('Error loading data:', error);
-            document.body.innerHTML += `<p style="color:red">เกิดข้อผิดพลาดในการโหลดข้อมูล (anomaly_report.json, common-data.json, party-data.json) โปรดตรวจสอบว่าไฟล์มีอยู่จริง</p>`;
-        }
-    }
+            async function loadData() {
+                try {
+                    const [reportRes, commonRes, partyRes] = await Promise.all([
+                        fetch("data/anomaly_report.json"),
+                        fetch("data/common-data.json"),
+                        fetch("data/party-data.json"),
+                    ]);
 
-    function processCommonData(data) {
-        if (data.provinces) {
-            data.provinces.forEach(p => {
-                const id = p.code.replace('PROVINCE-', '');
-                provinceMap[id] = p.name;
-            });
-        }
-    }
+                    const reportData = await reportRes.json();
+                    const commonData = await commonRes.json();
+                    const partyData = await partyRes.json();
 
-    function processPartyData(data) {
-        if (data.parties) {
-            data.parties.forEach(p => {
-                partyMap[p.code] = {
-                    name: p.name,
-                    color: p.colorPrimary || '#666666'
-                };
-            });
-        }
-    }
-    
-    function getProvinceName(areaCode) {
-        const provinceId = areaCode.substring(0, areaCode.length - 2);
-        const districtId = parseInt(areaCode.substring(areaCode.length - 2), 10);
-        return `${provinceMap[provinceId] || 'ไม่ทราบจังหวัด'} เขต ${districtId}`;
-    }
+                    // Process metadata
+                    processCommonData(commonData);
+                    processPartyData(partyData);
 
-    function getPartyInfo(code) {
-        return partyMap[code] || { name: code, color: '#666666' };
-    }
+                    allAnomalies = reportData.anomalies;
+                    renderDashboard(reportData);
+                    renderAggregations(reportData);
+                    renderPartySummary(allAnomalies);
+                    renderTableBatch();
+                } catch (error) {
+                    console.error("Error loading data:", error);
+                    document.body.innerHTML += `<p style="color:red">เกิดข้อผิดพลาดในการโหลดข้อมูล (anomaly_report.json, common-data.json, party-data.json) โปรดตรวจสอบว่าไฟล์มีอยู่จริง</p>`;
+                }
+            }
 
-    function renderAggregations(data) {
-        // Render Provinces
-        const provBody = document.querySelector('#provinceTable tbody');
-        if (data.province_stats) {
-            data.province_stats.slice(0, 10).forEach((p, idx) => {
-                const rowId = `prov-detail-${idx}`;
-                const areasHtml = p.areas.map(a => `
+            function processCommonData(data) {
+                if (data.provinces) {
+                    data.provinces.forEach((p) => {
+                        const id = p.code.replace("PROVINCE-", "");
+                        provinceMap[id] = p.name;
+                    });
+                }
+            }
+
+            function processPartyData(data) {
+                if (data.parties) {
+                    data.parties.forEach((p) => {
+                        partyMap[p.code] = {
+                            name: p.name,
+                            color: p.colorPrimary || "#666666",
+                        };
+                    });
+                }
+            }
+
+            function getProvinceName(areaCode) {
+                const provinceId = areaCode.substring(0, areaCode.length - 2);
+                const districtId = parseInt(
+                    areaCode.substring(areaCode.length - 2),
+                    10,
+                );
+                return `${provinceMap[provinceId] || "ไม่ทราบจังหวัด"} เขต ${districtId}`;
+            }
+
+            function getPartyInfo(code) {
+                return partyMap[code] || { name: code, color: "#666666" };
+            }
+
+            function renderAggregations(data) {
+                // Render Provinces
+                const provBody = document.querySelector("#provinceTable tbody");
+                if (data.province_stats) {
+                    data.province_stats.slice(0, 10).forEach((p, idx) => {
+                        const rowId = `prov-detail-${idx}`;
+                        const areasHtml = p.areas
+                            .map(
+                                (a) => `
                     <tr>
                         <td class="ps-4">เขต ${a.area_code.slice(-2)}</td>
                         <td>${getPartyInfo(a.mp_winner_party).name} (เบอร์ ${a.mp_number})</td>
                         <td class="text-end fw-bold theme-accent">${a.ghost_votes.toLocaleString()}</td>
                     </tr>
-                `).join('');
+                `,
+                            )
+                            .join("");
 
-                provBody.innerHTML += `
+                        provBody.innerHTML += `
                 <tr class="cursor-pointer" data-bs-toggle="collapse" data-bs-target="#${rowId}">
                     <td class="ps-4 fw-bold text-primary-theme d-flex justify-content-between align-items-center">
                         ${p.name}
@@ -408,25 +680,30 @@
                         </div>
                     </td>
                 </tr>`;
-            });
-        }
+                    });
+                }
 
-        // Render MP Parties
-        const mpBody = document.querySelector('#mpPartyTable tbody');
-        if (data.mp_party_stats) {
-            data.mp_party_stats.forEach((p, idx) => {
-                const pInfo = getPartyInfo(p.party_code);
-                const rowId = `mpparty-detail-${idx}`;
-                
-                const provHtml = p.provinces.map(pr => `
+                // Render MP Parties
+                const mpBody = document.querySelector("#mpPartyTable tbody");
+                if (data.mp_party_stats) {
+                    data.mp_party_stats.slice(0, 10).forEach((p, idx) => {
+                        const pInfo = getPartyInfo(p.party_code);
+                        const rowId = `mpparty-detail-${idx}`;
+
+                        const provHtml = p.provinces
+                            .slice(0, 10)
+                            .map(
+                                (pr) => `
                     <tr>
                         <td class="ps-4">${pr.name}</td>
                         <td class="text-end">${pr.count}</td>
                         <td class="text-end fw-bold theme-accent">${pr.votes.toLocaleString()}</td>
                     </tr>
-                `).join('');
+                `,
+                            )
+                            .join("");
 
-                mpBody.innerHTML += `
+                        mpBody.innerHTML += `
                 <tr class="cursor-pointer" data-bs-toggle="collapse" data-bs-target="#${rowId}">
                     <td class="ps-4">
                         <div class="d-flex align-items-center justify-content-between">
@@ -450,36 +727,40 @@
                         </div>
                     </td>
                 </tr>`;
-            });
-        }
-    }
-
-    function renderPartySummary(anomalies) {
-        const partyStats = {};
-        anomalies.forEach(a => {
-            if (!partyStats[a.pl_twin_party]) {
-                partyStats[a.pl_twin_party] = {
-                    code: a.pl_twin_party,
-                    count: 0,
-                    votes: 0
-                };
+                    });
+                }
             }
-            partyStats[a.pl_twin_party].count++;
-            partyStats[a.pl_twin_party].votes += a.pl_twin_votes;
-        });
 
-        const sortedParties = Object.values(partyStats).sort((a,b) => b.votes - a.votes);
-        const top5 = sortedParties.slice(0, 5);
-        const tableBody = document.querySelector('#partySummaryTable tbody');
-        
-        // Clear existing rows if any
-        tableBody.innerHTML = '';
+            function renderPartySummary(anomalies) {
+                const partyStats = {};
+                anomalies.forEach((a) => {
+                    if (!partyStats[a.pl_twin_party]) {
+                        partyStats[a.pl_twin_party] = {
+                            code: a.pl_twin_party,
+                            count: 0,
+                            votes: 0,
+                        };
+                    }
+                    partyStats[a.pl_twin_party].count++;
+                    partyStats[a.pl_twin_party].votes += a.pl_twin_votes;
+                });
 
-        top5.forEach((p, index) => {
-            const pInfo = getPartyInfo(p.code);
-            const avg = Math.round(p.votes / p.count);
-            
-            const row = `<tr>
+                const sortedParties = Object.values(partyStats).sort(
+                    (a, b) => b.votes - a.votes,
+                );
+                const top5 = sortedParties.slice(0, 5);
+                const tableBody = document.querySelector(
+                    "#partySummaryTable tbody",
+                );
+
+                // Clear existing rows if any
+                tableBody.innerHTML = "";
+
+                top5.forEach((p, index) => {
+                    const pInfo = getPartyInfo(p.code);
+                    const avg = Math.round(p.votes / p.count);
+
+                    const row = `<tr>
                 <td class="text-center fw-bold text-secondary">${index + 1}</td>
                 <td>
                     <div class="d-flex align-items-center">
@@ -491,20 +772,23 @@
                 <td class="text-end fw-bold text-accent">${p.votes.toLocaleString()}</td>
                 <td class="text-end text-secondary">${avg.toLocaleString()}</td>
             </tr>`;
-            tableBody.innerHTML += row;
-        });
-    }
+                    tableBody.innerHTML += row;
+                });
+            }
 
-    function renderTableBatch() {
-        const tableBody = document.querySelector('#anomalyTable tbody');
-        const nextBatch = allAnomalies.slice(displayedCount, displayedCount + ITEMS_PER_PAGE);
-        
-        nextBatch.forEach(a => {
-            const mpParty = getPartyInfo(a.mp_winner_party);
-            const plParty = getPartyInfo(a.pl_twin_party);
-            const location = getProvinceName(a.area_code);
+            function renderTableBatch() {
+                const tableBody = document.querySelector("#anomalyTable tbody");
+                const nextBatch = allAnomalies.slice(
+                    displayedCount,
+                    displayedCount + ITEMS_PER_PAGE,
+                );
 
-            const row = `<tr>
+                nextBatch.forEach((a) => {
+                    const mpParty = getPartyInfo(a.mp_winner_party);
+                    const plParty = getPartyInfo(a.pl_twin_party);
+                    const location = getProvinceName(a.area_code);
+
+                    const row = `<tr>
                 <td class="ps-4">
                     <div class="fw-bold text-dark">${location}</div>
                     <div class="small text-secondary">รหัสเขต ${a.area_code}</div>
@@ -512,14 +796,14 @@
                 <td>
                     <div class="fs-5 fw-bold text-primary-theme">เบอร์ ${a.mp_winner_number}</div>
                     <div class="d-flex align-items-center">
-                         <img src="img/${a.mp_winner_party}.webp" class="party-logo-sm me-1" onerror="this.style.display='none'"> 
+                         <img src="img/${a.mp_winner_party}.webp" class="party-logo-sm me-1" onerror="this.style.display='none'">
                          <span class="small text-secondary">${mpParty.name}</span>
                     </div>
                 </td>
                 <td class="highlight-anomaly">
                     <div class="fs-5 fw-bold text-accent">เบอร์ ${a.mp_winner_number}</div>
                     <div class="d-flex align-items-center">
-                        <img src="img/${a.pl_twin_party}.webp" class="party-logo-sm me-1" onerror="this.style.display='none'"> 
+                        <img src="img/${a.pl_twin_party}.webp" class="party-logo-sm me-1" onerror="this.style.display='none'">
                         <span class="small fw-bold text-dark">${plParty.name}</span>
                     </div>
                 </td>
@@ -528,137 +812,579 @@
                 <td class="text-secondary">${(a.mp_twin_candidate_votes || 0).toLocaleString()}</td>
                 <td class="text-secondary small">${(a.ratio_pl_to_mp * 100).toFixed(1)}%</td>
             </tr>`;
-            tableBody.innerHTML += row;
-        });
+                    tableBody.innerHTML += row;
+                });
 
-        displayedCount += nextBatch.length;
-        
-        const btn = document.getElementById('loadMoreBtn');
-        if (displayedCount >= allAnomalies.length) {
-            btn.style.display = 'none';
-        } else {
-            btn.style.display = 'inline-block';
-            btn.textContent = `โหลดข้อมูลเพิ่มเติม (แสดง ${displayedCount} จาก ${allAnomalies.length})`;
-        }
-    }
+                displayedCount += nextBatch.length;
 
-    function renderDashboard(data) {
-        const anomalies = data.anomalies;
-        
-        // 1. Stats
-        document.getElementById('total-anomalies').textContent = anomalies.length;
-        document.getElementById('max-votes').textContent = Math.max(...anomalies.map(a => a.pl_twin_votes)).toLocaleString();
+                const btn = document.getElementById("loadMoreBtn");
+                if (displayedCount >= allAnomalies.length) {
+                    btn.style.display = "none";
+                } else {
+                    btn.style.display = "inline-block";
+                    btn.textContent = `โหลดข้อมูลเพิ่มเติม (แสดง ${displayedCount} จาก ${allAnomalies.length})`;
+                }
+            }
 
-        // Calculate counts by NUMBER (not party) as requested
-        const numberCounts = {};
-        anomalies.forEach(a => {
-            const num = a.mp_winner_number;
-            numberCounts[num] = (numberCounts[num] || 0) + 1;
-        });
-        
-        // Find top PARTY for the stat box (still useful context)
-        const partyCounts = {};
-        anomalies.forEach(a => { partyCounts[a.pl_twin_party] = (partyCounts[a.pl_twin_party] || 0) + 1; });
-        const topPartyCode = Object.entries(partyCounts).sort((a,b) => b[1] - a[1])[0];
-        
-        if (topPartyCode) {
-            const pInfo = getPartyInfo(topPartyCode[0]);
-            document.getElementById('top-party').innerHTML = `${pInfo.name}<br><span style="font-size:0.6em; color: var(--accent-color)">(${topPartyCode[1]} เขต)</span>`;
-        } else {
-            document.getElementById('top-party').textContent = '-';
-        }
-        
-        // Setup Chart Defaults
-        Chart.defaults.font.family = "'Prompt', -apple-system, sans-serif";
-        Chart.defaults.color = "#14213d";
+            // Toggle functions (global scope)
+            function toggleOverlay() {
+                showOverlay = !showOverlay;
+                updateToggleButtons();
+                updateColorLegends();
+                // Re-render charts
+                renderDashboard({ anomalies: allAnomalies });
+            }
 
-        // 2. Chart: Top 10 Areas by Ghost Votes
-        const top10 = anomalies.slice(0, 10);
-        new Chart(document.getElementById('topAreaChart'), {
-            type: 'bar',
-            data: {
-                labels: top10.map(a => {
-                    const prov = getProvinceName(a.area_code);
-                    return prov; // Simplified label
-                }),
-                datasets: [{
-                    label: 'คะแนนพรรคแฝด',
-                    data: top10.map(a => a.pl_twin_votes),
-                    // Use Number-based colors
-                    backgroundColor: top10.map(a => numberColors[a.mp_winner_number] || '#666'), 
-                    borderColor: 'rgba(0,0,0,0.1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        backgroundColor: 'rgba(20, 33, 61, 0.9)',
-                        titleFont: { size: 14, family: 'Prompt' },
-                        bodyFont: { size: 13, family: 'Prompt' },
-                        padding: 12,
-                        callbacks: {
-                            // Enhanced Tooltip
-                            title: (items) => {
-                                const index = items[0].dataIndex;
-                                return `${getProvinceName(top10[index].area_code)}`;
-                            },
-                            label: (context) => {
-                                return `คะแนนพรรคแฝด: ${context.raw.toLocaleString()}`;
-                            },
-                            afterLabel: (context) => {
-                                const index = context.dataIndex;
-                                const item = top10[index];
-                                const mpP = getPartyInfo(item.mp_winner_party);
-                                const plP = getPartyInfo(item.pl_twin_party);
-                                return [
-                                    `--------------------------`,
-                                    `🏆 ส.ส. เขต: เบอร์ ${item.mp_winner_number} (${mpP.name})`,
-                                    `👻 แฝดปาร์ตี้ลิสต์: เบอร์ ${item.mp_winner_number} (${plP.name})`,
-                                    `📊 อันดับคะแนนแฝด: ที่ ${item.pl_twin_rank}`
-                                ];
-                            }
+            function toggleBaseColor() {
+                baseColorIsPL = !baseColorIsPL;
+                updateToggleButtons();
+                updateColorLegends();
+                // Re-render charts
+                renderDashboard({ anomalies: allAnomalies });
+            }
+
+            function updateToggleButtons() {
+                const overlayBtns = document.querySelectorAll(
+                    '[id^="overlayToggleBtn"]',
+                );
+                const baseBtns = document.querySelectorAll(
+                    '[id^="baseColorToggleBtn"]',
+                );
+
+                overlayBtns.forEach((btn) => {
+                    btn.textContent = showOverlay
+                        ? "✨ ระบายสีคู่พรรค: เปิด"
+                        : "✨ ระบายสีคู่พรรค: ปิด";
+                    btn.classList.toggle("btn-outline-primary", !showOverlay);
+                    btn.classList.toggle("btn-primary", showOverlay);
+                });
+
+                baseBtns.forEach((btn) => {
+                    const baseName = baseColorIsPL
+                        ? "พรรคบัญชีรายชื่อ (PL)"
+                        : "พรรค ส.ส. เขต (MP)";
+                    btn.textContent = `🎨 สีหลัก: ${baseName}`;
+                });
+            }
+
+            function updateColorLegends() {
+                const baseName = baseColorIsPL
+                    ? "พรรคบัญชีรายชื่อ (PL)"
+                    : "พรรค ส.ส. เขต (MP)";
+                const overlayName = baseColorIsPL
+                    ? "พรรค ส.ส. เขต (MP)"
+                    : "พรรคบัญชีรายชื่อ (PL)";
+
+                const legendText = showOverlay
+                    ? `<strong>สีกราฟ:</strong> สีพื้นหลัก = ${baseName} | จุดประกอบ = ${overlayName}`
+                    : `<strong>สีกราฟ:</strong> สีพื้นหลัก = ${baseName} (ไม่มีการระบายสีคู่พรรค)`;
+
+                const barLegend = document.getElementById("barColorLegend");
+                const doughnutLegend = document.getElementById(
+                    "doughnutColorLegend",
+                );
+                if (barLegend) barLegend.innerHTML = legendText;
+                if (doughnutLegend) doughnutLegend.innerHTML = legendText;
+            }
+
+            function renderDashboard(data) {
+                const anomalies = data.anomalies;
+
+                // 1. Stats
+                document.getElementById("total-anomalies").textContent =
+                    anomalies.length;
+                document.getElementById("max-votes").textContent = Math.max(
+                    ...anomalies.map((a) => a.pl_twin_votes),
+                ).toLocaleString();
+
+                // Calculate counts by NUMBER (not party) as requested
+                const numberCounts = {};
+                anomalies.forEach((a) => {
+                    const num = a.mp_winner_number;
+                    numberCounts[num] = (numberCounts[num] || 0) + 1;
+                });
+
+                // Find top PARTY for the stat box (still useful context)
+                const partyCounts = {};
+                anomalies.forEach((a) => {
+                    partyCounts[a.pl_twin_party] =
+                        (partyCounts[a.pl_twin_party] || 0) + 1;
+                });
+                const topPartyCode = Object.entries(partyCounts).sort(
+                    (a, b) => b[1] - a[1],
+                )[0];
+
+                if (topPartyCode) {
+                    const pInfo = getPartyInfo(topPartyCode[0]);
+                    document.getElementById("top-party").innerHTML =
+                        `${pInfo.name}<br><span style="font-size:0.6em; color: var(--accent-color)">(${topPartyCode[1]} เขต)</span>`;
+                } else {
+                    document.getElementById("top-party").textContent = "-";
+                }
+
+                // Setup Chart Defaults
+                Chart.defaults.font.family =
+                    "'Prompt', -apple-system, sans-serif";
+                Chart.defaults.color = "#1423d";
+
+                // Unified pattern creator for party pair colors
+                function createPartyPairPattern(mpColor, plColor, seed) {
+                    const canvas = document.createElement("canvas");
+                    canvas.width = 20;
+                    canvas.height = 20;
+                    const ctx = canvas.getContext("2d");
+
+                    // Determine base and overlay colors based on toggle
+                    const baseColor = baseColorIsPL ? plColor : mpColor;
+                    const overlayColor = baseColorIsPL ? mpColor : plColor;
+
+                    // Fill with base color
+                    ctx.fillStyle = baseColor;
+                    ctx.fillRect(0, 0, 20, 20);
+
+                    // Add overlay color as scattered dots (if enabled)
+                    if (showOverlay) {
+                        ctx.fillStyle = overlayColor;
+                        ctx.globalAlpha = 0.5;
+
+                        // Create consistent dot pattern using seed
+                        for (let i = 0; i < 15; i++) {
+                            const x = (seed * (i + 1) * 7) % 20;
+                            const y = (seed * (i + 1) * 13) % 20;
+                            ctx.beginPath();
+                            ctx.arc(x, y, 2, 0, Math.PI * 2);
+                            ctx.fill();
                         }
                     }
-                },
-                scales: { y: { beginAtZero: true, title: { display: true, text: 'คะแนน' } } }
+
+                    return ctx.createPattern(canvas, "repeat");
+                }
+
+                // 2. Chart: Top 10 Areas by Ghost Votes
+                const top10 = anomalies.slice(0, 10);
+
+                // Add party pair icons above the bar chart (one pair per bar)
+                const topAreaIcons = document.getElementById("topAreaIcons");
+                if (topAreaIcons) {
+                    topAreaIcons.innerHTML = top10
+                        .map((a, index) => {
+                            const mpInfo = getPartyInfo(a.mp_winner_party);
+                            const plInfo = getPartyInfo(a.pl_twin_party);
+                            const prov = getProvinceName(a.area_code);
+                            const color =
+                                numberColors[a.mp_winner_number] || "#666";
+
+                            return `
+                            <div class="chart-icon-wrapper">
+                                <div class="chart-icon-pair">
+                                    <img src="img/${a.mp_winner_party}.webp" onerror="this.style.display='none'" title="${mpInfo.name}">
+                                    <div style="width: 32px; height: 32px; border-radius: 50%; background-color: ${color}; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 0.9rem;">${a.mp_winner_number}</div>
+                                    <img src="img/${a.pl_twin_party}.webp" onerror="this.style.display='none'" title="${plInfo.name}">
+                                </div>
+                                <span>${index + 1}. ${prov.substring(0, 20)}${prov.length > 20 ? "..." : ""}</span>
+                            </div>
+                        `;
+                        })
+                        .join("");
+                }
+
+                // Create party pair patterns for bars using unified function
+                const barBackgrounds = top10.map((a) => {
+                    const mpInfo = getPartyInfo(a.mp_winner_party);
+                    const plInfo = getPartyInfo(a.pl_twin_party);
+                    const seed =
+                        parseInt(a.mp_winner_number) +
+                        parseInt(a.area_code.slice(-2));
+                    return createPartyPairPattern(
+                        mpInfo.color,
+                        plInfo.color,
+                        seed,
+                    );
+                });
+
+                // Destroy existing charts before re-rendering
+                if (topAreaChartInstance) {
+                    topAreaChartInstance.destroy();
+                }
+
+                topAreaChartInstance = new Chart(
+                    document.getElementById("topAreaChart"),
+                    {
+                        type: "bar",
+                        data: {
+                            labels: top10.map((a) => {
+                                const prov = getProvinceName(a.area_code);
+                                return prov;
+                            }),
+                            datasets: [
+                                {
+                                    label: baseColorIsPL
+                                        ? "คะแนนพรรคบัญชีรายชื่อ (PL)"
+                                        : "คะแนนพรรค ส.ส. เขต (MP)",
+                                    data: top10.map((a) => a.pl_twin_votes),
+                                    backgroundColor: barBackgrounds,
+                                    borderColor: top10.map((a) => {
+                                        const mpInfo = getPartyInfo(
+                                            a.mp_winner_party,
+                                        );
+                                        const plInfo = getPartyInfo(
+                                            a.pl_twin_party,
+                                        );
+                                        return baseColorIsPL
+                                            ? plInfo.color
+                                            : mpInfo.color;
+                                    }),
+                                    borderWidth: 2,
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: {
+                                    backgroundColor: "rgba(20, 33, 61, 0.95)",
+                                    titleFont: { size: 14, family: "Prompt" },
+                                    bodyFont: { size: 13, family: "Prompt" },
+                                    padding: 12,
+                                    callbacks: {
+                                        title: (items) => {
+                                            const index = items[0].dataIndex;
+                                            return `${getProvinceName(top10[index].area_code)}`;
+                                        },
+                                        label: (context) => {
+                                            const partyType = baseColorIsPL
+                                                ? "พรรคบัญชีรายชื่อ (PL)"
+                                                : "พรรค ส.ส. เขต (MP)";
+                                            return `คะแนน${partyType}: ${context.raw.toLocaleString()}`;
+                                        },
+                                        afterBody: (context) => {
+                                            const index = context[0].dataIndex;
+                                            const item = top10[index];
+                                            const mpP = getPartyInfo(
+                                                item.mp_winner_party,
+                                            );
+                                            const plP = getPartyInfo(
+                                                item.pl_twin_party,
+                                            );
+
+                                            // Swap labels based on baseColorIsPL
+                                            const leftLabel = baseColorIsPL
+                                                ? "ส.ส. เขต (MP)"
+                                                : "พรรคบัญชีรายชื่อ (PL)";
+                                            const rightLabel = baseColorIsPL
+                                                ? "พรรคบัญชีรายชื่อ (PL)"
+                                                : "ส.ส. เขต (MP)";
+                                            const leftParty = baseColorIsPL
+                                                ? mpP
+                                                : plP;
+                                            const rightParty = baseColorIsPL
+                                                ? plP
+                                                : mpP;
+
+                                            return `
+┌─────────────────────────────────┐
+│  🏆 ${leftLabel}: เบอร์ ${item.mp_winner_number}        │
+│  พรรค: ${leftParty.name}
+└─────────────────────────────────┘
+┌─────────────────────────────────┐
+│  👻 แฝด ${rightLabel} (เบอร์ ${item.mp_winner_number})        │
+│  พรรค: ${rightParty.name}
+│  อันดับ: ที่ ${item.pl_twin_rank}
+└─────────────────────────────────┘`;
+                                        },
+                                    },
+                                },
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    title: { display: true, text: "คะแนน" },
+                                },
+                            },
+                        },
+                    },
+                );
+
+                // 3. Chart: Doughnut by NUMBER (1, 2, 3...)
+                const sortedNumbers = Object.keys(numberCounts).sort(
+                    (a, b) => numberCounts[b] - numberCounts[a],
+                );
+
+                // Create party pair patterns for doughnut segments using unified function
+                const doughnutPatterns = sortedNumbers.map((num) => {
+                    // Find most common parties for this number
+                    const numAnomalies = anomalies.filter(
+                        (a) => a.mp_winner_number === num,
+                    );
+
+                    const mpPartyCount = {};
+                    const plPartyCount = {};
+                    numAnomalies.forEach((a) => {
+                        mpPartyCount[a.mp_winner_party] =
+                            (mpPartyCount[a.mp_winner_party] || 0) + 1;
+                        plPartyCount[a.pl_twin_party] =
+                            (plPartyCount[a.pl_twin_party] || 0) + 1;
+                    });
+
+                    const topMpParty = Object.entries(mpPartyCount).sort(
+                        (a, b) => b[1] - a[1],
+                    )[0];
+                    const topPlParty = Object.entries(plPartyCount).sort(
+                        (a, b) => b[1] - a[1],
+                    )[0];
+
+                    const mpInfo = topMpParty
+                        ? getPartyInfo(topMpParty[0])
+                        : { color: numberColors[num] || "#ccc" };
+                    const plInfo = topPlParty
+                        ? getPartyInfo(topPlParty[0])
+                        : { color: numberColors[num] || "#ccc" };
+
+                    // Use unified pattern function with number as seed
+                    return createPartyPairPattern(
+                        mpInfo.color,
+                        plInfo.color,
+                        parseInt(num),
+                    );
+                });
+
+                // Store party info for legend/tooltips
+                const numberPartyPairs = {};
+                sortedNumbers.forEach((num) => {
+                    const numAnomalies = anomalies.filter(
+                        (a) => a.mp_winner_number === num,
+                    );
+                    const mpPartyCount = {};
+                    const plPartyCount = {};
+                    numAnomalies.forEach((a) => {
+                        mpPartyCount[a.mp_winner_party] =
+                            (mpPartyCount[a.mp_winner_party] || 0) + 1;
+                        plPartyCount[a.pl_twin_party] =
+                            (plPartyCount[a.pl_twin_party] || 0) + 1;
+                    });
+                    const topMpParty = Object.entries(mpPartyCount).sort(
+                        (a, b) => b[1] - a[1],
+                    )[0];
+                    const topPlParty = Object.entries(plPartyCount).sort(
+                        (a, b) => b[1] - a[1],
+                    )[0];
+                    numberPartyPairs[num] = {
+                        mpParty: topMpParty
+                            ? getPartyInfo(topMpParty[0])
+                            : null,
+                        plParty: topPlParty
+                            ? getPartyInfo(topPlParty[0])
+                            : null,
+                    };
+                });
+
+                // Add number icons above the doughnut chart
+                const numberDistIcons =
+                    document.getElementById("numberDistIcons");
+                if (numberDistIcons) {
+                    // For each number, find the most common MP winner party and PL twin party
+                    numberDistIcons.innerHTML = sortedNumbers
+                        .map((num) => {
+                            const color = numberColors[num] || "#ccc";
+
+                            // Find anomalies with this number
+                            const numAnomalies = anomalies.filter(
+                                (a) => a.mp_winner_number === num,
+                            );
+
+                            // Count MP winner parties for this number
+                            const mpPartyCount = {};
+                            const plPartyCount = {};
+                            numAnomalies.forEach((a) => {
+                                mpPartyCount[a.mp_winner_party] =
+                                    (mpPartyCount[a.mp_winner_party] || 0) + 1;
+                                plPartyCount[a.pl_twin_party] =
+                                    (plPartyCount[a.pl_twin_party] || 0) + 1;
+                            });
+
+                            // Get most common parties
+                            const topMpParty = Object.entries(
+                                mpPartyCount,
+                            ).sort((a, b) => b[1] - a[1])[0];
+                            const topPlParty = Object.entries(
+                                plPartyCount,
+                            ).sort((a, b) => b[1] - a[1])[0];
+
+                            const mpPartyCode = topMpParty
+                                ? topMpParty[0]
+                                : null;
+                            const plPartyCode = topPlParty
+                                ? topPlParty[0]
+                                : null;
+                            const mpInfo = mpPartyCode
+                                ? getPartyInfo(mpPartyCode)
+                                : null;
+                            const plInfo = plPartyCode
+                                ? getPartyInfo(plPartyCode)
+                                : null;
+
+                            return `
+                            <div class="chart-icon-wrapper">
+                                <div class="chart-icon-pair">
+                                    ${mpPartyCode ? `<img src="img/${mpPartyCode}.webp" onerror="this.style.display='none'" title="${mpInfo.name}">` : ""}
+                                    <div style="width: 36px; height: 36px; border-radius: 50%; background-color: ${color}; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 1.1rem;">${num}</div>
+                                    ${plPartyCode ? `<img src="img/${plPartyCode}.webp" onerror="this.style.display='none'" title="${plInfo.name}">` : ""}
+                                </div>
+                                <span>เบอร์ ${num}${numAnomalies.length > 0 ? ` (${numAnomalies.length})` : ""}</span>
+                            </div>
+                        `;
+                        })
+                        .join("");
+                }
+
+                // Destroy existing charts before re-rendering
+                if (numberDistChartInstance) {
+                    numberDistChartInstance.destroy();
+                }
+
+                numberDistChartInstance = new Chart(
+                    document.getElementById("numberDistChart"),
+                    {
+                        type: "doughnut",
+                        data: {
+                            labels: sortedNumbers.map((n) => `เบอร์ ${n}`),
+                            datasets: [
+                                {
+                                    data: sortedNumbers.map(
+                                        (n) => numberCounts[n],
+                                    ),
+                                    backgroundColor: doughnutPatterns,
+                                    borderWidth: 2,
+                                    borderColor: "#ffffff",
+                                },
+                            ],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: "right",
+                                    labels: { font: { family: "Prompt" } },
+                                    generateLabels: (chart) => {
+                                        const data = chart.data;
+                                        if (
+                                            data.labels.length &&
+                                            data.datasets.length
+                                        ) {
+                                            return data.labels.map(
+                                                (label, i) => {
+                                                    const num =
+                                                        sortedNumbers[i];
+                                                    return {
+                                                        text: `${label} (${numberCounts[num]} เขต)`,
+                                                        fillStyle:
+                                                            data.datasets[0]
+                                                                .backgroundColor[
+                                                                i
+                                                            ],
+                                                        hidden: false,
+                                                        index: i,
+                                                    };
+                                                },
+                                            );
+                                        }
+                                        return [];
+                                    },
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        title: (ctx) => {
+                                            const num =
+                                                sortedNumbers[ctx[0].dataIndex];
+                                            return `เบอร์ ${num}`;
+                                        },
+                                        label: (ctx) => {
+                                            const num =
+                                                sortedNumbers[ctx.dataIndex];
+                                            return ` พบ ${ctx.raw} เขต (${((ctx.raw / anomalies.length) * 100).toFixed(1)}%)`;
+                                        },
+                                        afterBody: (ctx) => {
+                                            const num =
+                                                sortedNumbers[ctx[0].dataIndex];
+                                            const numAnomalies =
+                                                anomalies.filter(
+                                                    (a) =>
+                                                        a.mp_winner_number ===
+                                                        num,
+                                                );
+
+                                            // Count parties
+                                            const mpPartyCount = {};
+                                            const plPartyCount = {};
+                                            numAnomalies.forEach((a) => {
+                                                mpPartyCount[
+                                                    a.mp_winner_party
+                                                ] =
+                                                    (mpPartyCount[
+                                                        a.mp_winner_party
+                                                    ] || 0) + 1;
+                                                plPartyCount[a.pl_twin_party] =
+                                                    (plPartyCount[
+                                                        a.pl_twin_party
+                                                    ] || 0) + 1;
+                                            });
+
+                                            const topMpParty = Object.entries(
+                                                mpPartyCount,
+                                            ).sort((a, b) => b[1] - a[1])[0];
+                                            const topPlParty = Object.entries(
+                                                plPartyCount,
+                                            ).sort((a, b) => b[1] - a[1])[0];
+
+                                            // Use labels based on toggle state
+                                            const baseLabel = baseColorIsPL
+                                                ? "พล.ท. แฝด (PL)"
+                                                : "ส.ส. เขต (MP)";
+                                            const overlayLabel = baseColorIsPL
+                                                ? "ส.ส. เขต (MP)"
+                                                : "พล.ท. แฝด (PL)";
+                                            const baseParty = baseColorIsPL
+                                                ? topPlParty
+                                                : topMpParty;
+                                            const overlayParty = baseColorIsPL
+                                                ? topMpParty
+                                                : topPlParty;
+
+                                            let result =
+                                                "\nคู่พรรคที่พบบ่อยที่สุด:";
+                                            if (baseParty) {
+                                                const baseInfo = getPartyInfo(
+                                                    baseParty[0],
+                                                );
+                                                result += `\n  🎨 ${baseLabel}: ${baseInfo.name} (${baseParty[1]} เขต)`;
+                                            }
+                                            if (overlayParty) {
+                                                const overlayInfo =
+                                                    getPartyInfo(
+                                                        overlayParty[0],
+                                                    );
+                                                result += `\n  ✨ ${overlayLabel}: ${overlayInfo.name} (${overlayParty[1]} เขต)`;
+                                            }
+                                            return result;
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                );
             }
-        });
 
-        // 3. Chart: Doughnut by NUMBER (1, 2, 3...)
-        const sortedNumbers = Object.keys(numberCounts).sort((a,b) => numberCounts[b] - numberCounts[a]);
-        
-        new Chart(document.getElementById('numberDistChart'), {
-            type: 'doughnut',
-            data: {
-                labels: sortedNumbers.map(n => `เบอร์ ${n}`),
-                datasets: [{
-                    data: sortedNumbers.map(n => numberCounts[n]),
-                    backgroundColor: sortedNumbers.map(n => numberColors[n] || '#ccc'),
-                    borderWidth: 2,
-                    borderColor: '#ffffff'
-                }]
-            },
-            options: { 
-                responsive: true, 
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { position: 'right', labels: { font: { family: 'Prompt' } } },
-                    tooltip: {
-                        callbacks: {
-                            label: (ctx) => ` พบ ${ctx.raw} เขต (${((ctx.raw/anomalies.length)*100).toFixed(1)}%)`
-                        }
-                    }
-                } 
-            }
-        });
-    }
+            // Call loadData immediately
+            loadData();
 
-    // Call loadData immediately
-    loadData();
-</script>
-
-</body>
+            // Initialize toggle buttons after data loads (small delay to ensure DOM is ready)
+            setTimeout(() => {
+                updateToggleButtons();
+                updateColorLegends();
+            }, 500);
+        </script>
+    </body>
 </html>

@@ -5,252 +5,252 @@
       "number": 1,
       "name": "ไทยทรัพย์ทวี",
       "nameEn": "Thaisubthawee",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#E61E28"
     },
     {
       "code": "PARTY-0002",
       "number": 2,
       "name": "เพื่อชาติไทย",
       "nameEn": "Pheu Chart Thai",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#FAF046"
     },
     {
       "code": "PARTY-0003",
       "number": 3,
       "name": "ใหม่",
       "nameEn": "New",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#465078"
     },
     {
       "code": "PARTY-0004",
       "number": 4,
       "name": "มิติใหม่",
       "nameEn": "New Dimension",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#AAC89B"
     },
     {
       "code": "PARTY-0005",
       "number": 5,
       "name": "รวมใจไทย",
       "nameEn": "Ruam Jai Thai",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#DF141E"
     },
     {
       "code": "PARTY-0006",
       "number": 6,
       "name": "รวมไทยสร้างชาติ",
       "nameEn": "United Thai Nation",
-      "colorPrimary": "#1742B9"
+      "colorPrimary": "#6E2D55"
     },
     {
       "code": "PARTY-0007",
       "number": 7,
       "name": "พลวัต",
       "nameEn": "Movement",
-      "colorPrimary": "#04C001"
+      "colorPrimary": "#5ABE32"
     },
     {
       "code": "PARTY-0008",
       "number": 8,
       "name": "ประชาธิปไตยใหม่",
       "nameEn": "New Democracy",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#F05A28"
     },
     {
       "code": "PARTY-0009",
       "number": 9,
       "name": "เพื่อไทย",
       "nameEn": "Pheu Thai",
-      "colorPrimary": "#F11824"
+      "colorPrimary": "#FA0A0A"
     },
     {
       "code": "PARTY-0010",
       "number": 10,
       "name": "ทางเลือกใหม่",
       "nameEn": "New Alternative",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#2E387E"
     },
     {
       "code": "PARTY-0011",
       "number": 11,
       "name": "เศรษฐกิจ",
       "nameEn": "Economic",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#FABE32"
     },
     {
       "code": "PARTY-0012",
       "number": 12,
       "name": "เสรีรวมไทย",
       "nameEn": "Thai Liberal",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#C95B00"
     },
     {
       "code": "PARTY-0013",
       "number": 13,
       "name": "รวมพลังประชาชน",
       "nameEn": "United People Power",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#784C6A"
     },
     {
       "code": "PARTY-0014",
       "number": 14,
       "name": "ท้องที่ไทย",
       "nameEn": "The Party Of Thai Countries",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#00AADC"
     },
     {
       "code": "PARTY-0015",
       "number": 15,
       "name": "อนาคตไทย",
       "nameEn": "Thailand's Future",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#BE281E"
     },
     {
       "code": "PARTY-0016",
       "number": 16,
       "name": "พลังเพื่อไทย",
       "nameEn": "Power Thai",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#2E3296"
     },
     {
       "code": "PARTY-0017",
       "number": 17,
       "name": "ไทยชนะ",
       "nameEn": "Thaichana",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#6B2C60"
     },
     {
       "code": "PARTY-0018",
       "number": 18,
       "name": "พลังสังคมใหม่",
       "nameEn": "Plung Sungkom Mai",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#A01E32"
     },
     {
       "code": "PARTY-0019",
       "number": 19,
       "name": "สังคมประชาธิปไตยไทย",
       "nameEn": "Thai Social Democratic",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#EDA8AE"
     },
     {
       "code": "PARTY-0020",
       "number": 20,
       "name": "ฟิวชัน",
       "nameEn": "Fusion",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#147850"
     },
     {
       "code": "PARTY-0021",
       "number": 21,
       "name": "ไทรวมพลัง",
       "nameEn": "Thai Ruam Palang",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#F0008C"
     },
     {
       "code": "PARTY-0022",
       "number": 22,
       "name": "ก้าวอิสระ",
       "nameEn": "Independent",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#645AAA"
     },
     {
       "code": "PARTY-0023",
       "number": 23,
       "name": "ปวงชนไทย",
       "nameEn": "Thai People's",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#822A54"
     },
     {
       "code": "PARTY-0024",
       "number": 24,
       "name": "วิชชั่นใหม่",
       "nameEn": "New Vision",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#E91E28"
     },
     {
       "code": "PARTY-0025",
       "number": 25,
       "name": "เพื่อชีวิตใหม่",
       "nameEn": "Pheuchevitmaiv",
-      "colorPrimary": null
+      "colorPrimary": "#FAB400"
     },
     {
       "code": "PARTY-0026",
       "number": 26,
       "name": "คลองไทย",
       "nameEn": "Klong Thai",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#006EB4"
     },
     {
       "code": "PARTY-0027",
       "number": 27,
       "name": "ประชาธิปัตย์",
       "nameEn": "Democrat",
-      "colorPrimary": "#15A5F5"
+      "colorPrimary": "#005AB0"
     },
     {
       "code": "PARTY-0028",
       "number": 28,
       "name": "ไทยก้าวหน้า",
       "nameEn": "Thai Progress",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#683068"
     },
     {
       "code": "PARTY-0029",
       "number": 29,
       "name": "ไทยภักดี",
       "nameEn": "Thaipakdee",
-      "colorPrimary": "#395D39"
+      "colorPrimary": "#32B446"
     },
     {
       "code": "PARTY-0030",
       "number": 30,
       "name": "แรงงานสร้างชาติ",
       "nameEn": "Nation Building Labour",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#64378C"
     },
     {
       "code": "PARTY-0031",
       "number": 31,
       "name": "ประชากรไทย",
       "nameEn": "Thai Citizen",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#0A3CFA"
     },
     {
       "code": "PARTY-0032",
       "number": 32,
       "name": "ครูไทยเพื่อประชาชน",
       "nameEn": "Thai Teachers For People",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#FA6428"
     },
     {
       "code": "PARTY-0033",
       "number": 33,
       "name": "ประชาชาติ",
       "nameEn": "Prachachat",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#A06E0A"
     },
     {
       "code": "PARTY-0034",
       "number": 34,
       "name": "สร้างอนาคตไทย",
       "nameEn": "Futurise Thailand",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#189078"
     },
     {
       "code": "PARTY-0035",
       "number": 35,
       "name": "รักชาติ",
       "nameEn": "Rak Chart",
-      "colorPrimary": "#179C8A"
+      "colorPrimary": "#939C45"
     },
     {
       "code": "PARTY-0036",
       "number": 36,
       "name": "ไทยพร้อม",
       "nameEn": "Thai Prompt",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#28C800"
     },
     {
       "code": "PARTY-0037",
@@ -264,21 +264,21 @@
       "number": 38,
       "name": "พลังธรรมใหม่",
       "nameEn": "New Palangdharma",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#676381"
     },
     {
       "code": "PARTY-0039",
       "number": 39,
       "name": "กรีน",
       "nameEn": "Green",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#2E9C4C"
     },
     {
       "code": "PARTY-0040",
       "number": 40,
       "name": "ไทยธรรม",
       "nameEn": "Thaitham",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#643290"
     },
     {
       "code": "PARTY-0041",
@@ -292,133 +292,133 @@
       "number": 42,
       "name": "กล้าธรรม",
       "nameEn": "Klatham",
-      "colorPrimary": "#4EC86F"
+      "colorPrimary": "#8C9B37"
     },
     {
       "code": "PARTY-0043",
       "number": 43,
       "name": "พลังประชารัฐ",
       "nameEn": "Palang Pracharath",
-      "colorPrimary": "#006536"
+      "colorPrimary": "#23447B"
     },
     {
       "code": "PARTY-0044",
       "number": 44,
       "name": "โอกาสใหม่",
       "nameEn": "New Opportunity",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#F06E78"
     },
     {
       "code": "PARTY-0045",
       "number": 45,
       "name": "เป็นธรรม",
       "nameEn": "Fair",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#064CA0"
     },
     {
       "code": "PARTY-0046",
       "number": 46,
       "name": "ประชาชน",
       "nameEn": "People's Party",
-      "colorPrimary": "#FF6D21"
+      "colorPrimary": "#FA6414"
     },
     {
       "code": "PARTY-0047",
       "number": 47,
       "name": "ประชาไทย",
       "nameEn": "Thai Population",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#323C8C"
     },
     {
       "code": "PARTY-0048",
       "number": 48,
       "name": "ไทยสร้างไทย",
       "nameEn": "Thai Sang Thai",
-      "colorPrimary": "#6841D0"
+      "colorPrimary": "#7828DC"
     },
     {
       "code": "PARTY-0049",
       "number": 49,
       "name": "ไทยก้าวใหม่",
       "nameEn": "Thai Kao Mai",
-      "colorPrimary": "#B2A900"
+      "colorPrimary": "#F06D2A"
     },
     {
       "code": "PARTY-0050",
       "number": 50,
       "name": "ประชาอาสาชาติ",
       "nameEn": "The Nation Thai's People Volunteer",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#E95428"
     },
     {
       "code": "PARTY-0051",
       "number": 51,
       "name": "พร้อม",
       "nameEn": "Promp",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#F40A0A"
     },
     {
       "code": "PARTY-0052",
       "number": 52,
       "name": "เครือข่ายชาวนาแห่งประเทศไทย",
       "nameEn": "The Farmer Network Of Thailand",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#0050CC"
     },
     {
       "code": "PARTY-0053",
       "number": 53,
       "name": "ไทยพิทักษ์ธรรม",
       "nameEn": "Thai Pitak Tham",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#FEA014"
     },
     {
       "code": "PARTY-0054",
       "number": 54,
       "name": "ความหวังใหม่",
       "nameEn": "New Aspiration",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#503C1E"
     },
     {
       "code": "PARTY-0055",
       "number": 55,
       "name": "ไทยรวมไทย",
       "nameEn": "Thairuamthai",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#FE3232"
     },
     {
       "code": "PARTY-0056",
       "number": 56,
       "name": "เพื่อบ้านเมือง",
       "nameEn": "Party For The Country",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#FA0000"
     },
     {
       "code": "PARTY-0057",
       "number": 57,
       "name": "พลังไทยรักชาติ",
       "nameEn": "Palang Thai Rak Chart",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#129C44"
     },
     {
       "code": "PARTY-0058",
       "number": 58,
       "name": "รักษ์ธรรม",
       "nameEn": "Rakstham",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#EDD33E"
     },
     {
       "code": "PARTY-0059",
       "number": 59,
       "name": "รวมพลัง",
       "nameEn": "Action Coalition",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#5D3585"
     },
     {
       "code": "PARTY-0060",
       "number": 60,
       "name": "สัมมาธิปไตย",
       "nameEn": "Sammaa Sovereign",
-      "colorPrimary": "#AA7E48"
+      "colorPrimary": "#3C5F41"
     }
   ]
 }
